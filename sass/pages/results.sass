@@ -1,0 +1,94 @@
+.material-list
+  background: #eee
+  padding: 10px
+  li, a
+    display: inline-block
+    margin-right: 10px
+  a
+    color: gray
+    font-size: 14px
+    text-transform: uppercase
+    padding: 5px
+    &:hover
+      border-bottom: 1px solid silver
+      color: silver
+    &.active
+      border-bottom: 2px solid #8dc63f
+      text-decoration: none
+      color: #8dc63f
+      font-weight: bold
+
+.cooperatives-list
+  +span-columns(3)
+  li
+    display: block
+
+.map
+  +span-columns(9)
+
+.gmap
+  width: 100%
+  height: 400px
+
+.results
+  padding: 10px 0
+  margin-bottom: 10px
+  .results-total
+    font-size: 10px
+    color: gray
+    display: block
+    margin-left: 5px
+    margin-top: 5px
+
+.map-target
+  display: block
+  margin-bottom: 10px
+
+.title
+  font-size: 14px
+  display: block
+  margin-bottom: 10px
+  text-transform: uppercase
+  padding-left: 5px
+  color: #BBB
+
+.weight-field
+  display: inline-block !important
+  background-color: #50B252
+  padding: 2px 5px 4px
+  margin-top: 5px
+  margin-left: 0 !important
+  color: white !important
+  font-size: 13px !important
+  font-weight: bold !important
+
+.cooperatives-list ul
+  height: 400px
+  overflow-y: scroll
+  font-size: 12px
+  small
+    font-size: 11px
+    color: gray
+    display: block
+    margin-left: 5px
+    margin-top: 10px
+  img
+    margin-left: 85px
+    margin-top: 80px
+  strong
+    font-size: 14px
+  address
+    font-style: normal
+  li
+    padding: 10px 5px
+    margin-top: 10px
+    margin-right: 10px
+    cursor: pointer
+    transition: 0.2s all
+    &:first-child
+      margin-top: 0
+    &:hover
+      background: #e5e5e5
+    &.active
+      color: #8dc63f
+      background: white

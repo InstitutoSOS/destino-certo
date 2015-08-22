@@ -1,0 +1,49 @@
+{
+  "name": "destino-certo",
+  "version": "1.0.0",
+  "description": "Certificação de reciclagem",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/InstitutoSOS/destino-certo.git"
+  },
+  "author": "Andre Racz",
+  "license": "Apache",
+  "bugs": {
+    "url": "https://github.com/InstitutoSOS/destino-certo/issues"
+  },
+  "homepage": "https://github.com/InstitutoSOS/destino-certo",
+  "devDependencies": {
+    "babelify": "^6.2.0",
+    "browserify": "^11.0.1",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.0.4",
+    "node-neat": "^1.7.2",
+    "normalize.css": "^3.0.3",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "react": "^0.13.3",
+    "react-google-maps": "^2.0.3",
+    "react-highcharts": "^1.0.3",
+    "superagent": "^1.3.0"
+  },
+  "build": {
+    "jsx": {
+      "main": "./front-end/main.jsx",
+      "files": "./front-end/**",
+      "final": "app.js"
+    },
+    "sass": {
+      "main": "./sass/initializer.sass",
+      "files": "./sass/**",
+      "final": "app.css"
+    },
+    "html": "./html/**/**",
+    "build-dir": "dist"
+  }
+}
