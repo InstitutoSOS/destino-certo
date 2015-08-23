@@ -1,0 +1,16 @@
+{
+	"logging": {	
+		"http": {
+			"enabled": false
+		}
+	},
+	"security": {
+		"cors": {
+			"restrictToDomain": "*"
+		},
+		"token": {
+			"salt": "please redefine this in config/production.json",
+			"daysToExpire": 7
+		}
+	}
+}
