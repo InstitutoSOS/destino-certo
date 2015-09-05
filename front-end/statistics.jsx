@@ -1,7 +1,9 @@
 import React from 'react';
- 
+import {default as generalUiActions} from './actions/generalUiActions'
 import materials from './model/materials' 
 import Highcharts from 'react-highcharts';
+
+
 
 
     var materialsData = {
@@ -145,14 +147,11 @@ class Statistics extends React.Component {
         }
         array.push(<option value={materials[i].id}  key={materials[i].id}>{materials[i].name}</option>);
     }
-    
+    generalUiActions.changeTitle('Como podemos melhorar o processo de reciclagem!');
     return  <div>
-                <div className="content">
-                    <div className="container">
-                        <span>Como podemos melhorar o processo de reciclagem!</span>
-                    </div>
-                </div>
-                <br /><br />
+                <br/>
+                <br/>
+                
                 <div className="select">
                   <div className="container">
                     Filtrar por material:&nbsp;

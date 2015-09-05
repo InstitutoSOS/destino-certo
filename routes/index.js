@@ -1,8 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
-var auth = require('./auth.js');
-var users = require('./users.js');
+var auth = require('./auth');
+var users = require('./users');
+var pessoaJuridica = require('./pessoaJuridica');
+var tipoMaterial = require('./tipoMaterial');
+var material = require('./material');
+
 
 publicRoutes();
 authenticatedRoutes();
@@ -15,8 +19,7 @@ module.exports = router;
 /***** private methods *****/
 
 function publicRoutes() {
-	router.post('/login', auth.login);
-    router.get('/login', auth.login);
+	router.post('/api/v1/login', auth.login);
 }
 
 function authenticatedRoutes() {
@@ -24,7 +27,10 @@ function authenticatedRoutes() {
 }
 
 function restrictedRoutes() {
-	crudRoutes('/api/v1/admin/users', users);
+	crudRoutes('/api/v1/private/admin/users', users);
+    crudRoutes('/api/v1/private/admin/pessoaJuridica', pessoaJuridica);
+    crudRoutes('/api/v1/private/admin/tipoMaterial', tipoMaterial);
+    crudRoutes('/api/v1/private/admin/material', material);
 }
 
 function crudRoutes(path, controller, middleware) {

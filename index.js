@@ -60,8 +60,10 @@ function connectToDatabase() {
 function configureMiddleware() {
     app.use(require('./middleware/utilities').bindUtilities);
 
-	app.all('/api/v1/*', [ require('./middleware/security').authenticate ]);
-	app.all('/api/v1/admin/*', [ require('./middleware/security').authorizeAdmin ]);
+	app.all('/api/v1/private/*', [ require('./middleware/security').authenticate ]);
+	app.all('/api/v1/private/admin/*', [ require('./middleware/security').authorizeAdmin ]);
+    
+    app.all('/api/v1/*', [ require('./middleware/utilities').nocache ]);
 }
 
 function configureRoutes() {

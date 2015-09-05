@@ -1,0 +1,81 @@
+
+input[type="checkbox"] {
+    margin-left: 3px;
+}
+
+input[type="text"], input[type="password"], select {
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid #DDD;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
+    font-size: 1em;
+    margin-bottom: 0.75em;
+    padding: 0.5em 0.5em
+}
+
+label {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 0.375em;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+fieldset {
+    background: #f7f7f7;
+    border: 1px solid #DDD;
+    margin: 0 0 0.75em;
+    padding: 1.5em;
+    border-radius: 6px;
+}
+
+input[type="button"]:hover, input[type="button"]:focus, input[type="reset"]:hover, input[type="reset"]:focus, input[type="submit"]:hover, input[type="submit"]:focus, button:hover, button:focus {
+    background-color: darken($default-bg-color, 15%);
+    color: #fff;    
+}
+
+input[type="button"], input[type="reset"], input[type="submit"], button {
+    -webkit-font-smoothing: antialiased;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    background-color: $default-bg-color;
+    border-radius: 3px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 1;
+    padding: 0.75em 1em;
+    text-decoration: none;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    
+    &.btn-default{
+        color: #000;
+        background-color: #fff;
+        border: 1px solid black;
+    }
+    
+    &.btn-sm {
+        padding: 0.25em 0.5em;
+        
+    }
+}
+
+div.mensagemErro {
+    border-radius: 3px;
+    border: 1px solid #ebccd1;
+    color: #a94442;
+    background-color: #f2dede;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
+    font-size: 1em;
+    margin-bottom: 0.75em;
+    padding: 0.5em 0.5em
+}

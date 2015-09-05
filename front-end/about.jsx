@@ -1,14 +1,12 @@
 import React from 'react';
+import {default as generalUiActions} from './actions/generalUiActions'
+
  
 class About extends React.Component {
   render() {
+    generalUiActions.changeTitle('Ajudar as pessoas faz bem!')
+    
     return  <div>
-                <div className="content">
-                  <div className="container">
-                    <span>Ajudar as pessoas faz bem!</span>
-                  </div>
-                </div>
-
                 <div className="about-us">
                   <div className="container">
                     <h3>Sobre nós</h3>

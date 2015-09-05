@@ -9,6 +9,6 @@ PacoteLocationHistory = connection.define('pacote_location_history', {}, {
     timestamps: false
 });
 
-Pacote.belongsToMany(Site, { through: PacoteLocationHistory });
+Pacote.belongsToMany(Site, { through: PacoteLocationHistory, onDelete:'NO ACTION' });
 
 module.exports = PacoteLocationHistory;

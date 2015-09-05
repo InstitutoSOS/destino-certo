@@ -2,15 +2,12 @@
 import React from 'react';
 
 import Materials from './materials'
+import {default as generalUiActions} from './actions/generalUiActions'
 
 class Index extends React.Component {
   render() {
+    generalUiActions.changeTitle('Encontre cooperativas e faça bons negócios!')
     return (<div>
-                <div className="content">
-                  <div className="container">
-                    <span>Encontre cooperativas e faça bons negócios!</span>
-                  </div>
-                </div>
                 <div className="container">
                   <div className="search">
                     <Materials />

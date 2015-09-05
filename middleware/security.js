@@ -24,7 +24,7 @@ function authenticate(req, res, next) {
 			if (decoded.expires <= Date.now()) {
 				res.sendError(400, 'Token expired');
 			} else {
-	 			User.findOne({ where: { email: decoded.email }}).then(function(user) {
+	 			User.findOne({ where: { email: decoded.user.email }}).then(function(user) {
 					if (user) {
 						req.user = user;
 						next();

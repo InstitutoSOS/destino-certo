@@ -33,6 +33,7 @@
     "jsonwebtoken": "^5.0.5",
     "moment": "^2.10.6",
     "morgan": "^1.6.1",
+    "object-assign": "^4.0.1",
     "react": "^0.13.3",
     "react-google-maps": "^2.0.3",
     "react-highcharts": "^1.0.3",

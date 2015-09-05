@@ -17,9 +17,9 @@ function login(req, res) {
 	var password = req.body.password || '';
 
 	if (email == '') {
-		denyRequest(res, 'Invalid credentials: no email provided');
+		denyRequest(res, 'Email não informado');
 	} else if (password == '') {
-		denyRequest(res, 'Invalid credentials: no password provided');
+		denyRequest(res, 'Senha não informada');
 	} else {
 		User.findOne({ where: { email: email }}).then(function(user) {
 			//console.log(user, user.authenticate(password))
@@ -39,7 +39,7 @@ function login(req, res) {
 /***** private methods *****/
 
 function denyRequest(res, message) {
-	message = message || 'Invalid credentials';
+	message = message || 'Credenciais inválidas';
 	res.sendError(401, message);
 }
 
@@ -50,14 +50,14 @@ function generateToken(user) {
 	var expires = moment().add(daysToExpire, 'days');
 	var tokenParams = {
 		expires: expires,
-        email: user.email
+        user: { name: user.name, email: user.email, admin: user.admin, pessoaJuridicaId: user.pessoaJuridicaId }
 	};
-	var token = jwt.sign(tokenParams, salt);
+    console.log(tokenParams);
+    console.log(JSON.stringify(tokenParams));
+	var token = jwt.sign(JSON.stringify(tokenParams), salt);
     delete user.password_hash;
     delete user['salt'];
 	return {
-		token: token,
-		expires: expires,
-		user: { name: user.name, email: user.email, admin: user.admin, pessoaJuridicaId: user.pessoaJuridicaId }
+		token: token
 	};
 }

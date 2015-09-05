@@ -39,6 +39,6 @@ var Site = connection.define('site', {
         
 var PessoaJuridica = require('./pessoaJuridica');
 
-Site.belongsTo(PessoaJuridica)
+Site.belongsTo(PessoaJuridica, { onDelete:'NO ACTION'})
 
 module.exports = Site;

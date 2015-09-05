@@ -14,6 +14,6 @@ var Material = connection.define('material', {
         
 var TipoMaterial = require('./tipoMaterial');
 
-Material.belongsTo(TipoMaterial)
+Material.belongsTo(TipoMaterial, {onDelete: 'NO ACTION'})
 
 module.exports = Material;

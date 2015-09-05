@@ -82,7 +82,11 @@ function makeRoutesFor(Model, callbacks) {
         query.then(function(result) {
 			sendDocument(res, result);
 		}).catch(function(error) {
-            return next(error);
+            if (error.name == 'SequelizeValidationError') {
+                sendDocument(res, {message: 'Erro de validação', errors: error.errors})
+            } else {
+                return next(error);
+            }
         });
     }
     

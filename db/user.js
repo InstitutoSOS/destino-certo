@@ -22,7 +22,7 @@ var User = connection.define('user', {
      validate: {
         isLongEnough: function (val) {
           if (val.length < 6) {
-            throw new Error("Please choose a longer password")
+            throw new Error("Escolha uma senha com tamanho maior")
          }
       }
     }
@@ -55,6 +55,6 @@ function encryptPassword(salt, password) {
         
 var PessoaJuridica = require('./pessoaJuridica');
 
-User.belongsTo(PessoaJuridica)
+User.belongsTo(PessoaJuridica, {onDelete: 'NO ACTION'})
 
 module.exports = User;

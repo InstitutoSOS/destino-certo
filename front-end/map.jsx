@@ -5,6 +5,8 @@ import request from 'superagent';
 const API_ENDPOINT = 'http://destinocerto.sebastianhaeni.ch/api/material/';
 
 import { GoogleMap, Marker, InfoWindow } from 'react-google-maps'
+import {default as generalUiActions} from './actions/generalUiActions'
+    
 
 
 var materialsId = {"plastico":1,"vidro":2,"aluminio":3,"tetrapack":4,"papel":5,"outros":6};

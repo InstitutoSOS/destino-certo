@@ -17,10 +17,10 @@ var Pacote = connection.define('pacote', {
 var Material = require('./material');
 var PessoaJuridica = require('./pessoaJuridica');
 
-Pacote.belongsTo(Material)
-Pacote.belongsTo(PessoaJuridica, {as: 'produtor'})
-Pacote.belongsTo(PessoaJuridica, {as: 'reciclador'})
-Pacote.belongsTo(PessoaJuridica, {as: 'atribuidoA'})
+Pacote.belongsTo(Material, {onDelete:'NO ACTION'})
+Pacote.belongsTo(PessoaJuridica, {as: 'produtor', onDelete:'NO ACTION'})
+Pacote.belongsTo(PessoaJuridica, {as: 'reciclador', onDelete:'NO ACTION'})
+Pacote.belongsTo(PessoaJuridica, {as: 'atribuidoA', onDelete:'NO ACTION'})
 
 
 
